@@ -12,10 +12,11 @@
 }
 
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
+    --bg-color: #bbbbbb;
+    --second-bg-color: #cccccc;
+    --text-color: #000;
+    --main-color: #555555;
+    --highlight-color: #000;
 }
 
 html {
@@ -180,7 +181,7 @@ section {
 }
 
 .btn-box .btn:hover {
-    color: var(--main-color);
+    color: var(--highlight-color);
 }
 
 .btn-box .btn:nth-child(2) {
