@@ -55,32 +55,36 @@ window.onscroll = () => {
     }
 }
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('JavaScript file loaded');
+    
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
+        const form = event.target;
+        const formData = new FormData(form);
 
-    fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            form.reset();
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('thankYouMessage').style.display = 'block';
-            setTimeout(() => {
-                window.location.hash = '#home';
-            }, 3000); // Redirect after 3 seconds
-        } else {
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset();
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+                setTimeout(() => {
+                    window.location.hash = '#home';
+                }, 3000); // Redirect after 3 seconds
+            } else {
+                alert('There was a problem with the submission.');
+            }
+        })
+        .catch(error => {
             alert('There was a problem with the submission.');
-        }
-    })
-    .catch(error => {
-        alert('There was a problem with the submission.');
+        });
     });
 });
