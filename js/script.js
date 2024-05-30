@@ -54,3 +54,33 @@ window.onscroll = () => {
         footer.classList.remove('show-animate');
     }
 }
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            form.reset();
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            setTimeout(() => {
+                window.location.hash = '#home';
+            }, 3000); // Redirect after 3 seconds
+        } else {
+            alert('There was a problem with the submission.');
+        }
+    })
+    .catch(error => {
+        alert('There was a problem with the submission.');
+    });
+});
