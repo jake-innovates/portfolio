@@ -216,10 +216,9 @@ section {
 .home-sci {
     position: absolute;
     bottom: 4rem;
-    width: 170px; /* Adjust the width if needed */
+    width: auto; /* Allow the width to adjust automatically */
     display: flex;
-    justify-content: flex-start; /* Change from space-between to flex-start */
-    gap: 10px; /* Add this line to create space between the items */
+    justify-content: flex-start; /* Align items to the start */
 }
 
 .home-sci a {
@@ -237,10 +236,12 @@ section {
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-    margin-right: 0; /* Ensure this is set to 0 */
+    margin-right: 10px; /* Add space between icons */
 }
 
-/* Rest of your CSS remains the same */
+.home-sci a:last-child {
+    margin-right: 0; /* Remove the margin for the last item */
+}
 
 .home-sci a:hover {
     color: var(--bg-color);
@@ -276,6 +277,7 @@ section {
     background: var(--bg-color);
     opacity: .8;
 }
+
 
 .about {
     display: flex;
