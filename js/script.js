@@ -74,10 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             if (response.ok) {
                 form.reset();
-                window.location.hash = '#home';
-                setTimeout(() => {
+                smoothScrollTo('#home', () => {
                     showNotification();
-                }, 500); // Ensure the page has time to scroll
+                });
             } else {
                 alert('There was a problem with the submission.');
             }
@@ -96,7 +95,13 @@ function showNotification() {
     }, 3000); // Show the notification for 3 seconds
 }
 
-function smoothScrollTo(target) {
+function smoothScrollTo(target, callback) {
     const element = document.querySelector(target);
-    element.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+    });
+
+    // Call the callback function after the scrolling is done
+    setTimeout(callback, 1000); // Adjust the timeout based on the scroll duration
 }
