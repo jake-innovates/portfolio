@@ -26,16 +26,25 @@ window.onscroll = () => {
             });
             // active sections for animation on scroll
             sec.classList.add('show-animate');
+            
+            // Make the Contact section visible when Skills section is visible
+            if (id === 'skills') {
+                document.getElementById('contact').classList.add('show-animate');
+            }
         }
         // if want to use animation that repeats on scroll use this
         else {
             sec.classList.remove('show-animate');
+
+            // Ensure the Contact section is not shown when Skills section is not visible
+            if (id === 'skills') {
+                document.getElementById('contact').classList.remove('show-animate');
+            }
         }
     });
 
     // sticky header
     let header = document.querySelector('header');
-
     header.classList.toggle('sticky', window.scrollY > 100);
 
     // remove toggle icon and navbar when click navbar links (scroll)
