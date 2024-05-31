@@ -984,14 +984,3 @@ section:nth-child(odd) .animate.scroll,
         transform: translate(-50%, -50%) scale(1.1);
     }
 }
-
-.show-animate {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section:not(.show-animate) {
-    opacity: 0;
-    transform: translateX(-100px);
-}
