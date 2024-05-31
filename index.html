@@ -244,18 +244,14 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
 
-        <form id="contactForm" action="https://formsubmit.co/jake.innovates@gmail.com" method="POST">
-            <!-- Hidden fields to disable captcha and prevent redirect -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="">
-
+        <form action="#">
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="text" placeholder="Full Name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Email Address" required>
                     <span class="focus"></span>
                 </div>
 
@@ -264,11 +260,11 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" name="mobile" placeholder="Mobile Number" required>
+                    <input type="number" placeholder="Mobile Number" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" name="subject" placeholder="Email Subject" required>
+                    <input type="text" placeholder="Email Subject" required>
                     <span class="focus"></span>
                 </div>
 
@@ -276,7 +272,7 @@
             </div>
 
             <div class="textarea-field">
-                <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
                 <span class="focus"></span>
 
                 <span class="animate scroll" style="--i:7;"></span>
@@ -288,8 +284,6 @@
                 <span class="animate scroll" style="--i:9;"></span>
             </div>
         </form>
-
-        <div id="notification" class="notification">Thank you! Your message has been sent.</div>
     </section>
 
     <!-- footer design -->
