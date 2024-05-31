@@ -97,11 +97,15 @@ function showNotification() {
 
 function smoothScrollTo(target, callback) {
     const element = document.querySelector(target);
+    const headerOffset = 70; // Adjust this offset if you have a sticky header
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+
     window.scrollTo({
-        top: element.offsetTop,
+        top: offsetPosition,
         behavior: 'smooth'
     });
 
-    // Call the callback function after the scrolling is done
-    setTimeout(callback, 1000); // Adjust the timeout based on the scroll duration
+    // Ensure callback is called after scrolling
+    setTimeout(callback, 1000);
 }
