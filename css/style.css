@@ -216,9 +216,10 @@ section {
 .home-sci {
     position: absolute;
     bottom: 4rem;
-    width: 170px;
+    width: 170px; /* Adjust the width if needed */
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Change from space-between to flex-start */
+    gap: 10px; /* Add this line to create space between the items */
 }
 
 .home-sci a {
@@ -236,8 +237,10 @@ section {
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-    margin-right: 10px;
+    margin-right: 0; /* Ensure this is set to 0 */
 }
+
+/* Rest of your CSS remains the same */
 
 .home-sci a:hover {
     color: var(--bg-color);
