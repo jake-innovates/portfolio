@@ -52,7 +52,7 @@ window.onscroll = () => {
     }
 }
 
-const form = document.querySelector("form");
+const form = document.getElementById("contact-form");
 const fullName = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
@@ -60,8 +60,7 @@ const subject = document.getElementById("subject");
 const mess = document.getElementById("message");
 
 function sendEmail() {
-    const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone Number: ${phone.value}<br> Message: ${mess.value}`;
-
+    const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Phone Number: ${phone.value}<br> Subject: ${subject.value}<br> Message: ${mess.value}`;
 
     Email.send({
         Host: "smtp.elasticemail.com",
@@ -69,11 +68,14 @@ function sendEmail() {
         Password: "D99338322D987A0BEAA19E1CAE6AD659B5B1",
         To: 'jake.innovates@gmail.com',
         From: "jake.innovates@gmail.com",
-        Subject: "This is the subject",
-        Body: "And this is the body"
+        Subject: subject.value,
+        Body: bodyMessage
     })
     .then(
-        message => alert(message)
+        message => alert("Email sent successfully!")
+    )
+    .catch(
+        error => alert("Failed to send email: " + error)
     );
 }
 
