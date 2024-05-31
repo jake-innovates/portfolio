@@ -510,7 +510,7 @@ span {
 }
 
 .skills-content .progress h3 span {
-    color: var(--text-color);
+    color: var (--text-color);
 }
 
 .skills-content .progress .bar {
@@ -948,5 +948,38 @@ section:nth-child(odd) .animate.scroll,
 @keyframes showRight {
     100% {
         width: 0;
+    }
+}
+
+.notification {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it */
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 4rem 6rem; /* Increase padding to make it bigger */
+    font-size: 2rem; /* Increase font size */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s; /* Add transform transition */
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Animate translation and scaling */
+    animation: bounce 1s; /* Add bounce animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
     }
 }
