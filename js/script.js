@@ -69,28 +69,37 @@ document.addEventListener('DOMContentLoaded', () => {
             body: formData,
             headers: {
                 'Accept': 'application/json'
-            } })
-            .then(response => {
-                if (response.ok) {
-                    form.reset();
-                    window.location.hash = '#home';
-                    setTimeout(() => {
-                        showNotification();
-                    }, 500); // Delay to ensure the hash change
-                } else {
-                    alert('There was a problem with the submission.');
-                }
-            })
-            .catch(error => {
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset();
+                smoothScrollTo('#home');
+                setTimeout(() => {
+                    showNotification();
+                }, 500); // Delay to ensure the hash change
+            } else {
                 alert('There was a problem with the submission.');
-            });
+            }
+        })
+        .catch(error => {
+            alert('There was a problem with the submission.');
         });
     });
-    
-    function showNotification() {
-        const notification = document.getElementById('notification');
-        notification.classList.add('show');
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000); // Show the notification for 3 seconds
-    }
+});
+
+function showNotification() {
+    const notification = document.getElementById('notification');
+    notification.classList.add('show');
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000); // Show the notification for 3 seconds
+}
+
+function smoothScrollTo(target) {
+    const element = document.querySelector(target);
+    window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+    });
+}
