@@ -216,7 +216,7 @@ section {
 .home-sci {
     position: absolute;
     bottom: 4rem;
-    width: auto; /* Adjust this if needed */
+    width: 100%; /* Ensure the container takes full width */
     display: flex;
     flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
     justify-content: center; /* Center icons on smaller screens */
@@ -851,20 +851,14 @@ section:nth-child(odd) .animate.scroll,
 }
 
 @media (max-width: 520px) {
-    .home-content h1 {
-        display: flex;
-        flex-direction: column;
-    }
-
     .home-sci {
-        width: 100%; /* Ensure the container takes full width */
         justify-content: center; /* Center the icons */
-        gap: 10px; /* Maintain spacing between icons */
     }
 
     .home-sci a {
-        width: 38px; /* Ensure width is correct */
-        height: 38px; /* Ensure height is correct */
+        width: 50px; /* Adjust width for better visibility */
+        height: 50px; /* Ensure height matches width */
+        margin-bottom: 10px; /* Add margin to avoid overlap */
     }
 }
 
