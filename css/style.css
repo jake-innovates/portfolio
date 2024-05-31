@@ -216,18 +216,20 @@ section {
 .home-sci {
     position: absolute;
     bottom: 4rem;
-    width: auto; /* Allow the width to adjust automatically */
+    width: auto; /* Adjust this if needed */
     display: flex;
-    justify-content: flex-start; /* Align items to the start */
+    justify-content: flex-start;
+    gap: 10px; /* This will create space between the icons */
 }
+
 
 .home-sci a {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 40px; /* Ensure width is correct */
+    height: 40px; /* Ensure height is correct */
     background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 50%;
@@ -236,11 +238,11 @@ section {
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-    margin-right: 10px; /* Add space between icons */
+    margin-right: 10px; /* Ensure spacing */
 }
 
 .home-sci a:last-child {
-    margin-right: 0; /* Remove the margin for the last item */
+    margin-right: 0;
 }
 
 .home-sci a:hover {
@@ -848,22 +850,18 @@ section:nth-child(odd) .animate.scroll,
 }
 
 @media (max-width: 520px) {
-    html {
-        font-size: 50%;
-    }
-
     .home-content h1 {
         display: flex;
         flex-direction: column;
     }
 
     .home-sci {
-        width: 160px;
+        width: 160px; /* Adjust if necessary */
     }
 
     .home-sci a {
-        width: 38px;
-        height: 38px;
+        width: 38px; /* Ensure width is correct */
+        height: 38px; /* Ensure height is correct */
     }
 }
 
