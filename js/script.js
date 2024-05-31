@@ -1,5 +1,3 @@
-
-You
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -76,9 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => {
             if (response.ok) {
                 form.reset();
-                smoothScrollTo('#home', () => {
-                    showNotification();
-                });
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('thankYouMessage').style.display = 'block';
+                setTimeout(() => {
+                    window.location.hash = '#home';
+                }, 3000); // Redirect after 3 seconds
             } else {
                 alert('There was a problem with the submission.');
             }
@@ -88,22 +88,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-function showNotification() {
-    const notification = document.getElementById('notification');
-    notification.classList.add('show');
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000); // Show the notification for 3 seconds
-}
-
-function smoothScrollTo(target, callback) {
-    const element = document.querySelector(target);
-    window.scrollTo({
-        top: element.offsetTop,
-        behavior: 'smooth'
-    });
-
-    // Call the callback function after the scrolling is done
-    setTimeout(callback, 1000); // Adjust the timeout based on the scroll duration
-}
