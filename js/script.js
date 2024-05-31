@@ -26,20 +26,13 @@ window.onscroll = () => {
             });
             // active sections for animation on scroll
             sec.classList.add('show-animate');
-            
+
             // Make the Contact section visible when Skills section is visible
             if (id === 'skills') {
                 document.getElementById('contact').classList.add('show-animate');
             }
-        }
-        // if want to use animation that repeats on scroll use this
-        else {
+        } else {
             sec.classList.remove('show-animate');
-
-            // Ensure the Contact section is not shown when Skills section is not visible
-            if (id === 'skills') {
-                document.getElementById('contact').classList.remove('show-animate');
-            }
         }
     });
 
@@ -58,8 +51,7 @@ window.onscroll = () => {
 
     if (Math.ceil(scrolled) === scrollable) {
         footer.classList.add('show-animate');
-    }
-    else {
+    } else {
         footer.classList.remove('show-animate');
     }
 }
@@ -106,15 +98,11 @@ function showNotification() {
 
 function smoothScrollTo(target, callback) {
     const element = document.querySelector(target);
-    const headerOffset = 70; // Adjust this offset if you have a sticky header
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
-
     window.scrollTo({
-        top: offsetPosition,
+        top: element.offsetTop,
         behavior: 'smooth'
     });
 
-    // Ensure callback is called after scrolling
-    setTimeout(callback, 1000);
+    // Call the callback function after the scrolling is done
+    setTimeout(callback, 1000); // Adjust the timeout based on the scroll duration
 }
