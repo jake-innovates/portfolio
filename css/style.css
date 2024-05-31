@@ -218,7 +218,8 @@ section {
     bottom: 4rem;
     width: auto; /* Adjust this if needed */
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+    justify-content: center; /* Center icons on smaller screens */
     gap: 10px; /* This will create space between the icons */
 }
 
@@ -856,7 +857,9 @@ section:nth-child(odd) .animate.scroll,
     }
 
     .home-sci {
-        width: 160px; /* Adjust if necessary */
+        width: 100%; /* Ensure the container takes full width */
+        justify-content: center; /* Center the icons */
+        gap: 10px; /* Maintain spacing between icons */
     }
 
     .home-sci a {
