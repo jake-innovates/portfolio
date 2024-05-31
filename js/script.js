@@ -1,3 +1,5 @@
+
+You
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
@@ -26,18 +28,16 @@ window.onscroll = () => {
             });
             // active sections for animation on scroll
             sec.classList.add('show-animate');
-
-            // Make the Contact section visible when Skills section is visible
-            if (id === 'skills') {
-                document.getElementById('contact').classList.add('show-animate');
-            }
-        } else {
+        }
+        // if want to use animation that repeats on scroll use this
+        else {
             sec.classList.remove('show-animate');
         }
     });
 
     // sticky header
     let header = document.querySelector('header');
+
     header.classList.toggle('sticky', window.scrollY > 100);
 
     // remove toggle icon and navbar when click navbar links (scroll)
@@ -51,7 +51,8 @@ window.onscroll = () => {
 
     if (Math.ceil(scrolled) === scrollable) {
         footer.classList.add('show-animate');
-    } else {
+    }
+    else {
         footer.classList.remove('show-animate');
     }
 }

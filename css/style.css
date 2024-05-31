@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -23,7 +22,6 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* Ensure this line is present */
 }
 
 body {
@@ -984,15 +982,4 @@ section:nth-child(odd) .animate.scroll,
     50% {
         transform: translate(-50%, -50%) scale(1.1);
     }
-}
-
-.show-animate {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section:not(.show-animate) {
-    opacity: 0;
-    transform: translateX(-100px);
 }
