@@ -959,6 +959,7 @@ section:nth-child(odd) .animate.scroll,
     transform: translate(-50%, -50%); /* Center it */
     background-color: blue;
     color: #fff;
+    text-color: black;
     padding: 4rem 6rem; /* Increase padding to make it bigger */
     font-size: 2rem; /* Increase font size */
     border-radius: 10px;
