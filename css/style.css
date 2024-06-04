@@ -748,6 +748,16 @@ section:nth-child(odd) .animate.scroll,
     color: white;
     text-decoration: underline;
 }
+
+.white-link {
+    color: white;
+    text-decoration: none; /* Optional: Removes the underline */
+}
+
+.white-link:hover {
+    color: white; /* Keeps the color white on hover */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
