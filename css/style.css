@@ -744,7 +744,10 @@ section:nth-child(odd) .animate.scroll,
     width: 0;
 }
 
-
+.privacypolicy {
+    color: white;
+    text-decoration: underline;
+}
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
