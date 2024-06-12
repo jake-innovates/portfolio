@@ -12,10 +12,10 @@
 }
 
 :root {
-    --bg-color: #121212;         /* Dark background color */
-    --second-bg-color: #2e2e2e;  /* Slightly lighter background color */
-    --text-color: #ededed;       /* Light text color */
-    --main-color: #9e9e9e;       /* Primary accent color */
+    --bg-color: #ededed;         /* Dark background color */
+    --second-bg-color: #fff;  /* Slightly lighter background color */
+    --text-color: #121212;       /* Light text color */
+    --main-color: #696c77;       /* Primary accent color */
 }
    
 
@@ -750,12 +750,12 @@ section:nth-child(odd) .animate.scroll,
 }
 
 .white-link {
-    color: white;
+    color: #696c77;
     text-decoration: none; /* Optional: Removes the underline */
 }
 
 .white-link:hover {
-    color: white; /* Keeps the color white on hover */
+    color: #121212; /* Keeps the color white on hover */
     text-decoration: underline; /* Optional: Adds underline on hover */
 }
 /* BREAKPOINTS */
